@@ -7,6 +7,10 @@ android {
     namespace 'com.pasandevin.android.android_mvvm_demo'
     compileSdk 32
 
+    dataBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.pasandevin.android.android_mvvm_demo"
         minSdk 23
