@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
 import com.pasandevin.android.android_mvvm_demo.R
 import com.pasandevin.android.android_mvvm_demo.databinding.FragmentMainBinding
 import kotlin.math.log
@@ -34,15 +35,10 @@ class MainFragment : Fragment() {
     ): View {
         binding = FragmentMainBinding.inflate(inflater,container,false)
 
-//        binding.vm = viewModel
+        binding.vm = viewModel
 
         viewModel.message.observe(viewLifecycleOwner) {
             binding.reflectedMessage.text = it
-        }
-
-        binding.submitButton.setOnClickListener {
-            viewModel.updateMessage(binding.orginalMessage.text.toString())
-            binding.reflectedMessage.text = viewModel.message.value
         }
 
         return binding.root

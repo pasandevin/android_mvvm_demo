@@ -23,11 +23,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orginalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/originalMessage"
         app:layout_constraintVertical_bias="0.198" />
 
     <EditText
-        android:id="@+id/orginalMessage"
+        android:id="@+id/originalMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
@@ -35,17 +35,9 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="increment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-<!--        android:onClick="@{() -> vm.updateMessage()}"/>-->
+        app:layout_constraintTop_toTopOf="parent"
+        android:afterTextChanged="@{() -> vm.updateMessage(originalMessage.getText().toString())}" />
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
